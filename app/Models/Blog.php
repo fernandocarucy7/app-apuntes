@@ -28,4 +28,25 @@ class Blog extends Model
             }
         );
     }
+
+    protected function apuntes(): Attribute
+    {
+        return Attribute::make(
+            set: function($cadena) {
+                $cadena = str_replace(["\r", "\n"], '', $cadena);
+                $array = explode(',', $cadena);
+                return json_encode($array);
+            }
+        );
+    }
+    protected function referencias(): Attribute
+    {
+        return Attribute::make(
+            set: function($cadena) {
+                $cadena = str_replace(["\r", "\n"], '', $cadena);
+                $array = explode(',', $cadena);
+                return json_encode($array);
+            }
+        );
+    }
 }

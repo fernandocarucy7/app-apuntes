@@ -11,4 +11,19 @@ class DatosController extends Controller
         $datos = Blog::All();
         return view('datos', compact('datos'));
     }
+
+    public function crear(){
+        return view('formulario');
+    }
+
+    public function enviar(Request $request){
+        $nota = new Blog();
+
+        $nota->titulo = $request->titulo;
+        $nota->apuntes = $request->apuntes;
+        $nota->referencias = $request->referencias;
+        $nota->save();
+
+        return redirect('/crear');
+    }
 }

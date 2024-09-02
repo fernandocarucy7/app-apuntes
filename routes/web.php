@@ -25,3 +25,5 @@ Route::get('/prueba', function () {
 });
 
 Route::get('/datos', [DatosController::class, 'index']);
+Route::get('/crear', [DatosController::class, 'crear']);
+Route::post('/crear', [DatosController::class, 'enviar']);

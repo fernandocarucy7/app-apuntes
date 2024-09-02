@@ -26,4 +26,13 @@ class DatosController extends Controller
 
         return redirect('/crear');
     }
+
+    public function modificar(){
+        $nota = Blog::find(7);
+        return view('modificar',compact('nota'));
+    }
+
+    public function principal(){
+        return view('principal');
+    }
 }

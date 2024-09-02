@@ -4,9 +4,9 @@ use App\Http\Controllers\DatosController;
 use App\Models\Blog;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/*Route::get('/', function () {
+    return view('');
+});*/
 
 
 Route::get('/prueba', function () {
@@ -24,6 +24,11 @@ Route::get('/prueba', function () {
 
 });
 
-Route::get('/datos', [DatosController::class, 'index']);
+Route::get('/', [DatosController::class, 'principal']);
+
+Route::get('/mostrar', [DatosController::class, 'index']);
+
 Route::get('/crear', [DatosController::class, 'crear']);
 Route::post('/crear', [DatosController::class, 'enviar']);
+
+Route::get('/modificar', [DatosController::class, 'modificar']);
